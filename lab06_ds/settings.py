@@ -79,7 +79,8 @@ WSGI_APPLICATION = 'lab06_ds.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-        'default': {
+    'default': {
+
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'db_poo',
         'USER': 'root',
