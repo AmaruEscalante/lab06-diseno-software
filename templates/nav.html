@@ -1,0 +1,52 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top" id="main-navbar">
+    <div class="container">
+
+        <a class="navbar-brand pr-5" style="border-right: 1px solid #efefef;" href="{% url 'home' %}">
+            <img src="{% static "img/utec-logo.jpg" %}" height="50" class="d-inline-block align-top"/>
+        </a>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item nav-icon">
+                    <a href="#">Inicio
+                  </a>
+                </li>
+
+                {% if request.user.profile.type == 'estudiante'  %}
+
+                <li class="nav-item nav-icon">
+{#                    <a href="{% url 'posts:create' %}">#}
+                    <a href="#">Notas</a>
+{#                        <i class="fas fa-plus"></i>#}
+                    </a>
+                </li>
+
+                <li class="nav-item nav-icon" style="align-items: flex-end">
+                    <a href="#">Horario</a>
+                </li>
+                {% else %}
+                <li class="nav-item nav-icon">
+{#                    <a href="{% url 'posts:create' %}">#}
+                    <a href="#">Registro de Notas</a>
+{#                        <i class="fas fa-plus"></i>#}
+                    </a>
+                </li>
+
+                <li class="nav-item nav-icon" style="align-items: flex-end">
+                    <a href="#">Registro de Asistencia</a>
+                </li>
+                {% endif %}
+
+                <li class="nav-item nav-icon" style="align-items: flex-end">
+                    <a href="{% url 'users:logout' %}">
+                        Salir
+                    </a>
+                </li>
+                
+
+            </ul>
+        </div>
+    </div>
+</nav>
